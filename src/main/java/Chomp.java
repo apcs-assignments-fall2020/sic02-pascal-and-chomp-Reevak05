@@ -15,7 +15,11 @@ public class Chomp
     public static boolean eat(char[][] board, int row, int col)
     {        
         // YOUR CODE HERE
-        return false;
+        boolean validMove;
+        if (row<board.length && col<board[0].length && board[row][col] == '*') validMove = true;
+        else validMove = false;
+        for (int boardRow = row; boardRow<board.length; boardRow++) for (int boardCol = col; boardCol<board[0].length; boardCol++) board[boardRow][boardCol] = ' ';
+        return validMove;
     }
     
     public static void printBoard(char[][] board)
